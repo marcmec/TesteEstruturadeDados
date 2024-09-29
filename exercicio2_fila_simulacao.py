@@ -1,7 +1,10 @@
-def fila_simulacao():
-    fila = [1, 2]
-    fila.pop()
-    return fila
+def fila_simulacao(fila):
+    fila.append(1)
+    fila.append(2)
+    primeiro_elemento = fila.pop(0)
+    return primeiro_elemento
 
-resultado = fila_simulacao()
-print(resultado) 
+fila_inicial = []
+resultado = fila_simulacao(fila_inicial)
+print(resultado)
+

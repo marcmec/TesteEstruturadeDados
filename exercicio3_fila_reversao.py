@@ -1,0 +1,54 @@
+class Fila:
+    def __init__(self):
+        self.itens = []
+
+    def esta_vazia(self):
+        return len(self.itens) == 0
+
+    def enfileirar(self, item):
+        self.itens.append(item)
+
+    def desenfileirar(self):
+        if not self.esta_vazia():
+            return self.itens.pop(0)
+        return None
+
+    def tamanho(self):
+        return len(self.itens)
+
+class Pilha:
+    def __init__(self):
+        self.itens = []
+
+    def esta_vazia(self):
+        return self.itens == []
+
+    def empilhar(self, item):
+        self.itens.append(item)
+
+    def desempilhar(self):
+        if not self.esta_vazia():
+            return self.itens.pop()
+        return None
+
+def reverter_fila(fila_entrada):
+    fila = Fila()
+
+    for item in fila_entrada:
+        fila.enfileirar(item)
+
+    pilha_aux = Pilha()
+    while not fila.esta_vazia():
+        pilha_aux.empilhar(fila.desenfileirar())
+
+    fila_invertida = []
+    while not pilha_aux.esta_vazia():
+        fila_invertida.append(pilha_aux.desempilhar())
+    
+    return fila_invertida
+
+if __name__ == "__main__":
+    entrada = [1, 2, 3]
+    resultado = reverter_fila(entrada)
+    print(f"Fila original: {entrada}")
+    print(f"Fila invertida: {resultado}")

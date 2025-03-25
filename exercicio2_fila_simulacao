@@ -1,0 +1,13 @@
+
+def simulate_queue():
+    queue = []
+
+    queue.append(1)
+    queue.append(2)
+
+    result = queue[0]
+    queue = queue[1:]
+    return result
+
+output = simulate_queue()
+print(output)

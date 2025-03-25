@@ -1,0 +1,16 @@
+def reverse_queue(items):
+    queue = list(items)
+
+    stack = []
+    while queue:
+        stack.append(queue[0])
+        queue = queue[1:]
+
+    reversed_queue = []
+    while stack:
+        reversed_queue.append(stack.pop())
+    return reversed_queue
+
+input = [1, 2, 3]
+output = reverse_queue(input)
+print(output)

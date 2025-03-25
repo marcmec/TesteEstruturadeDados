@@ -1,0 +1,16 @@
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+def get_children(value, left_value, right_value):
+    node = Node(value)
+    node.left = Node(left_value)
+    node.right = Node(right_value)
+
+    return [node.left.value, node.right.value]
+
+input = 10
+chl = get_children(input, 5, 15)
+print(chl)
